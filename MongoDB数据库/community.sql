@@ -1,0 +1,2438 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : localhost_27017
+ Source Server Type    : MongoDB
+ Source Server Version : 40201
+ Source Host           : localhost:27017
+ Source Schema         : community
+
+ Target Server Type    : MongoDB
+ Target Server Version : 40201
+ File Encoding         : 65001
+
+ Date: 05/09/2020 00:56:04
+*/
+
+
+// ----------------------------
+// Collection structure for cars
+// ----------------------------
+db.getCollection("cars").drop();
+db.createCollection("cars");
+
+// ----------------------------
+// Documents of cars
+// ----------------------------
+db.getCollection("cars").insert([ {
+    _id: ObjectId("5f5120e44cfaf8c78df28b18"),
+    date: "2020-9-4",
+    gridNum: "1",
+    gridRange: "华林小区周边",
+    communityName: "华林小区",
+    carNum: "川A-1233",
+    carHolder: "李小兔",
+    carColor: "红",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("cars").insert([ {
+    _id: ObjectId("5f5121304cfaf8c78df28b20"),
+    date: "2020-9-4",
+    gridNum: "2",
+    gridRange: "富林理工周边",
+    communityName: "富林理工",
+    carNum: "川A-3410",
+    carHolder: "周婷婷",
+    carColor: "黄",
+    __v: NumberInt("0")
+} ]);
+
+// ----------------------------
+// Collection structure for communities
+// ----------------------------
+db.getCollection("communities").drop();
+db.createCollection("communities");
+
+// ----------------------------
+// Documents of communities
+// ----------------------------
+db.getCollection("communities").insert([ {
+    _id: ObjectId("5f5120684cfaf8c78df28b0e"),
+    communityName: "华林小区",
+    communityAdd: "华林1路7号",
+    developCompany: "开发商1",
+    property: "团队1",
+    gridNum: "1",
+    gridRange: "华林小区周边",
+    date: ISODate("2020-09-03T16:57:12.009Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("communities").insert([ {
+    _id: ObjectId("5f5120934cfaf8c78df28b11"),
+    communityName: "富林理工",
+    communityAdd: "富林东路10号",
+    developCompany: "开发商2",
+    property: "团队2",
+    gridNum: "2",
+    gridRange: "富林理工周边",
+    date: ISODate("2020-09-03T16:57:55.993Z"),
+    __v: NumberInt("0")
+} ]);
+
+// ----------------------------
+// Collection structure for dictionaries
+// ----------------------------
+db.getCollection("dictionaries").drop();
+db.createCollection("dictionaries");
+
+// ----------------------------
+// Documents of dictionaries
+// ----------------------------
+db.getCollection("dictionaries").insert([ {
+    _id: ObjectId("5f510160403b46d5150ec0ed"),
+    dictionaryName: "民族",
+    dictionaryType: "String",
+    insideData: [
+        {
+            _id: ObjectId("5f51017d403b46d5150ec0f0"),
+            option: "汉族"
+        },
+        {
+            _id: ObjectId("5f51018c403b46d5150ec0f3"),
+            option: "满族"
+        }
+    ],
+    date: ISODate("2020-09-03T14:44:48.423Z"),
+    __v: NumberInt("2")
+} ]);
+db.getCollection("dictionaries").insert([ {
+    _id: ObjectId("5f5102e3403b46d5150ec0f7"),
+    dictionaryName: "文化程度",
+    dictionaryType: "字符型",
+    insideData: [
+        {
+            _id: ObjectId("5f510329403b46d5150ec0fc"),
+            option: "大学本科"
+        },
+        {
+            _id: ObjectId("5f51033a403b46d5150ec0ff"),
+            option: "大专"
+        }
+    ],
+    date: ISODate("2020-09-03T14:51:15.947Z"),
+    __v: NumberInt("2")
+} ]);
+db.getCollection("dictionaries").insert([ {
+    _id: ObjectId("5f5109e2450a5dd451220d60"),
+    dictionaryName: "网络员",
+    dictionaryType: "字符串",
+    insideData: [
+        {
+            _id: ObjectId("5f5109f6450a5dd451220d62"),
+            option: "华林小区网络员"
+        },
+        {
+            _id: ObjectId("5f5109fe450a5dd451220d64"),
+            option: "富林理工网络员"
+        }
+    ],
+    date: ISODate("2020-09-03T15:21:06.395Z"),
+    __v: NumberInt("2")
+} ]);
+db.getCollection("dictionaries").insert([ {
+    _id: ObjectId("5f511390a727a5c7093c8908"),
+    dictionaryName: "任务类型",
+    dictionaryType: "字符串2",
+    insideData: [
+        {
+            _id: ObjectId("5f511396a727a5c7093c890a"),
+            option: "一般任务"
+        },
+        {
+            _id: ObjectId("5f51139aa727a5c7093c890c"),
+            option: "紧急任务"
+        }
+    ],
+    date: ISODate("2020-09-03T16:02:24.344Z"),
+    __v: NumberInt("2")
+} ]);
+db.getCollection("dictionaries").insert([ {
+    _id: ObjectId("5f5113a3a727a5c7093c890e"),
+    dictionaryName: "网络区域",
+    dictionaryType: "字符串22",
+    insideData: [
+        {
+            _id: ObjectId("5f5113a9a727a5c7093c8910"),
+            option: "华林小区周边"
+        },
+        {
+            _id: ObjectId("5f5113ada727a5c7093c8912"),
+            option: "富林理工周边"
+        }
+    ],
+    date: ISODate("2020-09-03T16:02:43.376Z"),
+    __v: NumberInt("2")
+} ]);
+
+// ----------------------------
+// Collection structure for houses
+// ----------------------------
+db.getCollection("houses").drop();
+db.createCollection("houses");
+
+// ----------------------------
+// Documents of houses
+// ----------------------------
+db.getCollection("houses").insert([ {
+    _id: ObjectId("5f5120be4cfaf8c78df28b14"),
+    date: "2020-9-4",
+    gridNum: "1",
+    gridRange: "华林小区周边",
+    communityName: "华林小区",
+    houseNum: "7栋601",
+    houseSize: "100平方米",
+    houseHolder: "李小兔",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("houses").insert([ {
+    _id: ObjectId("5f5121064cfaf8c78df28b1b"),
+    date: "2020-9-4",
+    gridNum: "2",
+    gridRange: "富林理工周边",
+    communityName: "富林理工",
+    houseNum: "3栋410",
+    houseSize: "95平方米",
+    houseHolder: "周婷婷",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("houses").insert([ {
+    _id: ObjectId("5f5121464cfaf8c78df28b22"),
+    date: "2020-9-4",
+    gridNum: "2",
+    gridRange: "富林理工周边",
+    communityName: "富林理工",
+    houseNum: "6栋201",
+    houseSize: "88平方米",
+    houseHolder: "王燕燕",
+    __v: NumberInt("0")
+} ]);
+
+// ----------------------------
+// Collection structure for loginrecords
+// ----------------------------
+db.getCollection("loginrecords").drop();
+db.createCollection("loginrecords");
+
+// ----------------------------
+// Documents of loginrecords
+// ----------------------------
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f50fd1f403b46d5150ec0e5"),
+    userName: "admin",
+    role: "管理员",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.3 22:26",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f50fd63403b46d5150ec0e6"),
+    userName: "admin",
+    role: "管理员",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.3 22:27",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f50fd77403b46d5150ec0e7"),
+    userName: "admin",
+    role: "管理员",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.3 22:28",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f50feea403b46d5150ec0e8"),
+    userName: "admin",
+    role: "管理员",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.3 22:34",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f50ff51403b46d5150ec0e9"),
+    userName: "admin",
+    role: "管理员",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.3 22:36",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f50ffe5403b46d5150ec0ea"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.3 22:38",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f51035e403b46d5150ec104"),
+    userName: "leader",
+    role: "领导",
+    tel: 13958010342,
+    name: "张领导",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.3 22:53",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f51036f403b46d5150ec105"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.3 22:53",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5103ab403b46d5150ec108"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "双鱼林",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.3 22:54",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f51089d450a5dd451220d53"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.3 23:15",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5108c7450a5dd451220d56"),
+    userName: "leader",
+    role: "领导",
+    tel: 13958010342,
+    name: "张领导",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.3 23:16",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5108eb450a5dd451220d57"),
+    userName: "user2",
+    role: "查询用户",
+    tel: 13580123942,
+    name: "李晓天",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.3 23:16",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5108f8450a5dd451220d58"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "双鱼林",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.3 23:17",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f510964450a5dd451220d59"),
+    userName: "leader",
+    role: "领导",
+    tel: 13958010342,
+    name: "张领导",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.3 23:18",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f510974450a5dd451220d5a"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "双鱼林",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.3 23:19",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f51097f450a5dd451220d5b"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.3 23:19",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5109ab450a5dd451220d5d"),
+    userName: "manage",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "双鱼林",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.3 23:20",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5109d6450a5dd451220d5e"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.3 23:20",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f510a64450a5dd451220d66"),
+    userName: "manage",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "双鱼林",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.3 23:23",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f510b70450a5dd451220d67"),
+    userName: "manage",
+    role: "领导",
+    tel: 13958010342,
+    name: "张领导",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.3 23:27",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f510d66450a5dd451220d68"),
+    userName: "grider",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "张涛",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.3 23:36",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f510e79a727a5c7093c88fd"),
+    userName: "grider",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "张涛",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.3 23:40",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f51116ca727a5c7093c8905"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "华林小区",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.3 23:53",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f51119ca727a5c7093c8906"),
+    userName: "manage",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "华林小区",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.3 23:54",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f51137fa727a5c7093c8907"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:2",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5113bca727a5c7093c8914"),
+    userName: "manage",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "华林小区",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:3",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5113fba727a5c7093c8918"),
+    userName: "grider",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "张涛",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:4",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5114aaa727a5c7093c8919"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "张涛",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:7",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5114daa727a5c7093c891a"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:7",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5115e1a727a5c7093c8924"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:12",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f511667a727a5c7093c8925"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:14",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5116c5a727a5c7093c892d"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:16",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5118aa4cfaf8c78df28ad8"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:24",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5118aa4cfaf8c78df28ad9"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:24",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5118cd4cfaf8c78df28adb"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "张涛涛",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:24",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5118f04cfaf8c78df28ae0"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:25",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5119424cfaf8c78df28ae3"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:26",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f51196a4cfaf8c78df28ae5"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:27",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5119a14cfaf8c78df28ae6"),
+    userName: "leader",
+    role: "领导",
+    tel: 13958010342,
+    name: "张领导",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:28",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f511a544cfaf8c78df28ae7"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:31",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f511a8f4cfaf8c78df28ae8"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13580123942,
+    name: "王婷丽",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:32",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f511adc4cfaf8c78df28aeb"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "张涛涛",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:33",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f511af94cfaf8c78df28aec"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13580123942,
+    name: "王婷丽",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:34",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f511b624cfaf8c78df28aed"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "张涛涛",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:35",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f511bda4cfaf8c78df28af2"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:37",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f511c854cfaf8c78df28af3"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13580123942,
+    name: "王婷丽",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:40",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f511c9a4cfaf8c78df28af4"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "张涛涛",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:40",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f511ccf4cfaf8c78df28af6"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13580123942,
+    name: "王婷丽",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:41",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f511d434cfaf8c78df28af9"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:43",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f511d714cfaf8c78df28afa"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:44",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f511d8d4cfaf8c78df28afb"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:45",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f511dae4cfaf8c78df28afc"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:45",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f511fd04cfaf8c78df28b0b"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:54",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5120234cfaf8c78df28b0c"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:56",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f51204f4cfaf8c78df28b0d"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 13508100342,
+    name: "华林小区网络员",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:56",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5120764cfaf8c78df28b10"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13502309342,
+    name: "富林理工网络员",
+    nation: "汉族",
+    education: "大专",
+    nowDate: "2020.9.4 0:57",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5120a74cfaf8c78df28b13"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 13508100342,
+    name: "华林小区网络员",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 0:58",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5120f24cfaf8c78df28b1a"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13502309342,
+    name: "富林理工网络员",
+    nation: "汉族",
+    education: "大专",
+    nowDate: "2020.9.4 0:59",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f51214e4cfaf8c78df28b24"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 13508100342,
+    name: "华林小区网络员",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 1:1",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5121694cfaf8c78df28b25"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 1:1",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5121924cfaf8c78df28b26"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.4 1:2",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5122164cfaf8c78df28b27"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 1:4",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f522ff84cfaf8c78df28b33"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    nation: "汉",
+    education: "大学本科",
+    nowDate: "2020.9.4 20:15",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f52311d4cfaf8c78df28b36"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 20:20",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5232d54cfaf8c78df28b3d"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13502309342,
+    name: "富林理工网络员",
+    nation: "汉族",
+    education: "大专",
+    nowDate: "2020.9.4 20:28",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f52341d4cfaf8c78df28b44"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 20:33",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5234904cfaf8c78df28b50"),
+    userName: "leader",
+    role: "领导",
+    tel: 13958010342,
+    name: "张领导",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 20:35",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("loginrecords").insert([ {
+    _id: ObjectId("5f5234c54cfaf8c78df28b51"),
+    userName: "leader",
+    role: "领导",
+    tel: 13958010342,
+    name: "张领导",
+    nation: "汉族",
+    education: "大学本科",
+    nowDate: "2020.9.4 20:36",
+    __v: NumberInt("0")
+} ]);
+
+// ----------------------------
+// Collection structure for operaterecords
+// ----------------------------
+db.getCollection("operaterecords").drop();
+db.createCollection("operaterecords");
+
+// ----------------------------
+// Documents of operaterecords
+// ----------------------------
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f510160403b46d5150ec0ee"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-新增字典",
+    date: ISODate("2020-09-03T14:44:48.479Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f51017d403b46d5150ec0f1"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-新增字典明细",
+    date: ISODate("2020-09-03T14:45:17.247Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f51018c403b46d5150ec0f4"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-新增字典明细",
+    date: ISODate("2020-09-03T14:45:32.918Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5102e3403b46d5150ec0f8"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-新增字典",
+    date: ISODate("2020-09-03T14:51:15.968Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f51030f403b46d5150ec0fa"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典",
+    date: ISODate("2020-09-03T14:51:59.827Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f510329403b46d5150ec0fd"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-新增字典明细",
+    date: ISODate("2020-09-03T14:52:25.853Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f51033a403b46d5150ec100"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-新增字典明细",
+    date: ISODate("2020-09-03T14:52:42.713Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f510354403b46d5150ec103"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "用户管理-新增用户",
+    date: ISODate("2020-09-03T14:53:08.571Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5103a2403b46d5150ec107"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "用户管理-新增用户",
+    date: ISODate("2020-09-03T14:54:26.03Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f510731c443eeda4524bce8"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "双鱼林",
+    operate: "小区治理-小区建档",
+    date: ISODate("2020-09-03T15:09:37.515Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f51075ec443eeda4524bce9"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "双鱼林",
+    operate: "小区治理-修改小区信息",
+    date: ISODate("2020-09-03T15:10:22.324Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f510836450a5dd451220d49"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "双鱼林",
+    operate: "小区治理-房屋建档",
+    date: ISODate("2020-09-03T15:13:58.953Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f51083d450a5dd451220d4a"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "双鱼林",
+    operate: "小区治理-修改房屋信息",
+    date: ISODate("2020-09-03T15:14:05.513Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f510840450a5dd451220d4b"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "双鱼林",
+    operate: "小区治理-修改房屋信息",
+    date: ISODate("2020-09-03T15:14:08.614Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f510856450a5dd451220d4d"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "双鱼林",
+    operate: "小区治理-人员建档",
+    date: ISODate("2020-09-03T15:14:30.27Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f510866450a5dd451220d4e"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "双鱼林",
+    operate: "小区治理-修改人员信息",
+    date: ISODate("2020-09-03T15:14:46.592Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f510877450a5dd451220d50"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "双鱼林",
+    operate: "小区治理-车辆建档",
+    date: ISODate("2020-09-03T15:15:03.527Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f51087b450a5dd451220d51"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "双鱼林",
+    operate: "小区治理-修改车辆信息",
+    date: ISODate("2020-09-03T15:15:07.178Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f51087d450a5dd451220d52"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "双鱼林",
+    operate: "小区治理-修改车辆信息",
+    date: ISODate("2020-09-03T15:15:09.866Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5108b9450a5dd451220d55"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "用户管理-新增用户",
+    date: ISODate("2020-09-03T15:16:09.596Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5109e2450a5dd451220d61"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-新增字典",
+    date: ISODate("2020-09-03T15:21:06.424Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5109f6450a5dd451220d63"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-新增字典明细",
+    date: ISODate("2020-09-03T15:21:26.571Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5109fe450a5dd451220d65"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-新增字典明细",
+    date: ISODate("2020-09-03T15:21:34.492Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511125a727a5c7093c8904"),
+    userName: "grider",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "张涛",
+    operate: "网格管理-新建网格",
+    date: ISODate("2020-09-03T15:52:05.381Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511390a727a5c7093c8909"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-新增字典",
+    date: ISODate("2020-09-03T16:02:24.373Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511396a727a5c7093c890b"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-新增字典明细",
+    date: ISODate("2020-09-03T16:02:30.243Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f51139aa727a5c7093c890d"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-新增字典明细",
+    date: ISODate("2020-09-03T16:02:34.561Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5113a3a727a5c7093c890f"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-新增字典",
+    date: ISODate("2020-09-03T16:02:43.399Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5113a9a727a5c7093c8911"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-新增字典明细",
+    date: ISODate("2020-09-03T16:02:49.784Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5113ada727a5c7093c8913"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-新增字典明细",
+    date: ISODate("2020-09-03T16:02:53.084Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511544a727a5c7093c891b"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典明细",
+    date: ISODate("2020-09-03T16:09:40.406Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f51154da727a5c7093c891c"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典",
+    date: ISODate("2020-09-03T16:09:49.536Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511558a727a5c7093c891d"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典",
+    date: ISODate("2020-09-03T16:10:00.449Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511565a727a5c7093c891e"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典明细",
+    date: ISODate("2020-09-03T16:10:13.828Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511570a727a5c7093c891f"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典明细",
+    date: ISODate("2020-09-03T16:10:24.406Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511579a727a5c7093c8920"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典明细",
+    date: ISODate("2020-09-03T16:10:33.58Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511587a727a5c7093c8921"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典明细",
+    date: ISODate("2020-09-03T16:10:47.441Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511592a727a5c7093c8922"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典",
+    date: ISODate("2020-09-03T16:10:58.838Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f51159da727a5c7093c8923"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典明细",
+    date: ISODate("2020-09-03T16:11:09.149Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511679a727a5c7093c8926"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典",
+    date: ISODate("2020-09-03T16:14:49.074Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511681a727a5c7093c8927"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典",
+    date: ISODate("2020-09-03T16:14:57.503Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f51168aa727a5c7093c8928"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典",
+    date: ISODate("2020-09-03T16:15:06.296Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511698a727a5c7093c8929"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典明细",
+    date: ISODate("2020-09-03T16:15:20.521Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5116a2a727a5c7093c892a"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典明细",
+    date: ISODate("2020-09-03T16:15:30.338Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5116aca727a5c7093c892b"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典明细",
+    date: ISODate("2020-09-03T16:15:40.97Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5116b7a727a5c7093c892c"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典明细",
+    date: ISODate("2020-09-03T16:15:51.625Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5118684cfaf8c78df28ad4"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    operate: "网格管理-新建网格",
+    date: ISODate("2020-09-03T16:23:04.808Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f51187a4cfaf8c78df28ad6"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    operate: "综治管理-新建任务",
+    date: ISODate("2020-09-03T16:23:22.982Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5118814cfaf8c78df28ad7"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    operate: "综治管理-任务指派",
+    date: ISODate("2020-09-03T16:23:29.499Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5118d74cfaf8c78df28add"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "张涛涛",
+    operate: "综治管理-接收任务",
+    date: ISODate("2020-09-03T16:24:55.714Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5118de4cfaf8c78df28ade"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "张涛涛",
+    operate: "综治管理-完成任务",
+    date: ISODate("2020-09-03T16:25:02.621Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5118f94cfaf8c78df28ae1"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    operate: "综治管理-任务审核",
+    date: ISODate("2020-09-03T16:25:29.004Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f51195d4cfaf8c78df28ae4"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "用户管理-编辑用户",
+    date: ISODate("2020-09-03T16:27:09.816Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511ac54cfaf8c78df28aea"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13580123942,
+    name: "王婷丽",
+    operate: "小区治理-小区建档",
+    date: ISODate("2020-09-03T16:33:09.384Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511b984cfaf8c78df28aef"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "张涛涛",
+    operate: "小区治理-小区建档",
+    date: ISODate("2020-09-03T16:36:40.75Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511cc04cfaf8c78df28af5"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 15108307623,
+    name: "张涛涛",
+    operate: "小区治理-删除小区",
+    date: ISODate("2020-09-03T16:41:36.284Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511cd54cfaf8c78df28af7"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13580123942,
+    name: "王婷丽",
+    operate: "小区治理-删除小区",
+    date: ISODate("2020-09-03T16:41:57.757Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511cd74cfaf8c78df28af8"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13580123942,
+    name: "王婷丽",
+    operate: "小区治理-删除小区",
+    date: ISODate("2020-09-03T16:41:59.857Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511dc64cfaf8c78df28afd"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典",
+    date: ISODate("2020-09-03T16:45:58.363Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511dd84cfaf8c78df28afe"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典明细",
+    date: ISODate("2020-09-03T16:46:16.314Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511de24cfaf8c78df28aff"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典明细",
+    date: ISODate("2020-09-03T16:46:26.833Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511df24cfaf8c78df28b00"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典明细",
+    date: ISODate("2020-09-03T16:46:42.136Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511e194cfaf8c78df28b01"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "字典管理-修改字典明细",
+    date: ISODate("2020-09-03T16:47:21.699Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511e254cfaf8c78df28b02"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    operate: "任务管理-删除任务",
+    date: ISODate("2020-09-03T16:47:33.365Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511ec74cfaf8c78df28b04"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "用户管理-新增用户",
+    date: ISODate("2020-09-03T16:50:15.066Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511ee84cfaf8c78df28b06"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "用户管理-新增用户",
+    date: ISODate("2020-09-03T16:50:48.506Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511f104cfaf8c78df28b08"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    operate: "网格管理-新建网格",
+    date: ISODate("2020-09-03T16:51:28.265Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f511f494cfaf8c78df28b0a"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    operate: "网格管理-新建网格",
+    date: ISODate("2020-09-03T16:52:25.183Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5120684cfaf8c78df28b0f"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 13508100342,
+    name: "华林小区网络员",
+    operate: "小区治理-小区建档",
+    date: ISODate("2020-09-03T16:57:12.048Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5120944cfaf8c78df28b12"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13502309342,
+    name: "富林理工网络员",
+    operate: "小区治理-小区建档",
+    date: ISODate("2020-09-03T16:57:56.029Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5120be4cfaf8c78df28b15"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 13508100342,
+    name: "华林小区网络员",
+    operate: "小区治理-房屋建档",
+    date: ISODate("2020-09-03T16:58:38.781Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5120d54cfaf8c78df28b17"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 13508100342,
+    name: "华林小区网络员",
+    operate: "小区治理-人员建档",
+    date: ISODate("2020-09-03T16:59:01.345Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5120e44cfaf8c78df28b19"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 13508100342,
+    name: "华林小区网络员",
+    operate: "小区治理-车辆建档",
+    date: ISODate("2020-09-03T16:59:16.501Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5121064cfaf8c78df28b1c"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13502309342,
+    name: "富林理工网络员",
+    operate: "小区治理-房屋建档",
+    date: ISODate("2020-09-03T16:59:50.944Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5121194cfaf8c78df28b1e"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13502309342,
+    name: "富林理工网络员",
+    operate: "小区治理-人员建档",
+    date: ISODate("2020-09-03T17:00:09.025Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5121214cfaf8c78df28b1f"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13502309342,
+    name: "富林理工网络员",
+    operate: "小区治理-修改人员信息",
+    date: ISODate("2020-09-03T17:00:17.477Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5121304cfaf8c78df28b21"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13502309342,
+    name: "富林理工网络员",
+    operate: "小区治理-车辆建档",
+    date: ISODate("2020-09-03T17:00:32.059Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5121464cfaf8c78df28b23"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13502309342,
+    name: "富林理工网络员",
+    operate: "小区治理-房屋建档",
+    date: ISODate("2020-09-03T17:00:54.837Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f51222e4cfaf8c78df28b29"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    operate: "综治管理-新建任务",
+    date: ISODate("2020-09-03T17:04:46.234Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5122394cfaf8c78df28b2a"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    operate: "综治管理-任务指派",
+    date: ISODate("2020-09-03T17:04:57.056Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5122424cfaf8c78df28b2b"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 13508100342,
+    name: "华林小区网络员",
+    operate: "综治管理-接收任务",
+    date: ISODate("2020-09-03T17:05:06.406Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5122454cfaf8c78df28b2c"),
+    userName: "user1",
+    role: "网格员用户",
+    tel: 13508100342,
+    name: "华林小区网络员",
+    operate: "综治管理-完成任务",
+    date: ISODate("2020-09-03T17:05:09.925Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5122514cfaf8c78df28b2d"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    operate: "综治管理-任务审核",
+    date: ISODate("2020-09-03T17:05:21.705Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5230564cfaf8c78df28b34"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "小区数据备份",
+    date: ISODate("2020-09-04T12:17:26.647Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f52305d4cfaf8c78df28b35"),
+    userName: "admin",
+    role: "administrator",
+    tel: 13508312034,
+    name: "林哥哥",
+    operate: "小区数据备份",
+    date: ISODate("2020-09-04T12:17:33.8Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5232674cfaf8c78df28b38"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    operate: "综治管理-新建任务",
+    date: ISODate("2020-09-04T12:26:15.256Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5232964cfaf8c78df28b39"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    operate: "综治管理-任务指派",
+    date: ISODate("2020-09-04T12:27:02.822Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5233654cfaf8c78df28b3f"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13502309342,
+    name: "富林理工网络员",
+    operate: "小区治理-人员建档",
+    date: ISODate("2020-09-04T12:30:29.593Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5233f44cfaf8c78df28b40"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13502309342,
+    name: "富林理工网络员",
+    operate: "综治管理-接收任务",
+    date: ISODate("2020-09-04T12:32:52.134Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f5234084cfaf8c78df28b41"),
+    userName: "user2",
+    role: "网格员用户",
+    tel: 13502309342,
+    name: "富林理工网络员",
+    operate: "综治管理-完成任务",
+    date: ISODate("2020-09-04T12:33:12.806Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("operaterecords").insert([ {
+    _id: ObjectId("5f52343e4cfaf8c78df28b47"),
+    userName: "manage",
+    role: "gridManager",
+    tel: 13082083422,
+    name: "王明",
+    operate: "综治管理-任务审核",
+    date: ISODate("2020-09-04T12:34:06.936Z"),
+    __v: NumberInt("0")
+} ]);
+
+// ----------------------------
+// Collection structure for persons
+// ----------------------------
+db.getCollection("persons").drop();
+db.createCollection("persons");
+
+// ----------------------------
+// Documents of persons
+// ----------------------------
+db.getCollection("persons").insert([ {
+    _id: ObjectId("5f5120d54cfaf8c78df28b16"),
+    date: "2020-9-4",
+    gridNum: "1",
+    gridRange: "华林小区周边",
+    communityName: "华林小区",
+    personName: "李小兔",
+    personSex: "女",
+    personAdd: "7栋601",
+    personTel: "13508103423",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("persons").insert([ {
+    _id: ObjectId("5f5121184cfaf8c78df28b1d"),
+    date: "2020-9-4",
+    gridNum: "2",
+    gridRange: "富林理工周边",
+    communityName: "富林理工",
+    personName: "周婷婷",
+    personSex: "女",
+    personAdd: "3栋410",
+    personTel: "13081803421",
+    __v: NumberInt("0")
+} ]);
+db.getCollection("persons").insert([ {
+    _id: ObjectId("5f5233654cfaf8c78df28b3e"),
+    date: "2020-9-4",
+    gridNum: "2",
+    gridRange: "富林理工周边",
+    communityName: "富林理工",
+    personName: "刘国强",
+    personSex: "男",
+    personAdd: "6栋101",
+    personTel: "15018029342",
+    __v: NumberInt("0")
+} ]);
+
+// ----------------------------
+// Collection structure for systemrecords
+// ----------------------------
+db.getCollection("systemrecords").drop();
+db.createCollection("systemrecords");
+
+// ----------------------------
+// Documents of systemrecords
+// ----------------------------
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f50ffe7403b46d5150ec0eb"),
+    wrongInfo: "TypeError: res.data.dic[0] is undefined",
+    wrongPlace: "字典维护-获取字典数据",
+    userName: "admin",
+    name: "林哥哥",
+    date: ISODate("2020-09-03T14:38:31.487Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510152403b46d5150ec0ec"),
+    wrongInfo: "TypeError: res.data.dic[0] is undefined",
+    wrongPlace: "字典维护-获取字典数据",
+    userName: "admin",
+    name: "林哥哥",
+    date: ISODate("2020-09-03T14:44:34.378Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510160403b46d5150ec0ef"),
+    wrongInfo: "TypeError: res.data.dic[1] is undefined",
+    wrongPlace: "字典维护-获取字典数据",
+    userName: "admin",
+    name: "林哥哥",
+    date: ISODate("2020-09-03T14:44:48.525Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f51017d403b46d5150ec0f2"),
+    wrongInfo: "TypeError: res.data.dic[1] is undefined",
+    wrongPlace: "字典维护-获取字典数据",
+    userName: "admin",
+    name: "林哥哥",
+    date: ISODate("2020-09-03T14:45:17.279Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f51018c403b46d5150ec0f5"),
+    wrongInfo: "TypeError: res.data.dic[1] is undefined",
+    wrongPlace: "字典维护-获取字典数据",
+    userName: "admin",
+    name: "林哥哥",
+    date: ISODate("2020-09-03T14:45:32.959Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f5102c9403b46d5150ec0f6"),
+    wrongInfo: "TypeError: res.data.dic[1] is undefined",
+    wrongPlace: "字典维护-获取字典数据",
+    userName: "admin",
+    name: "林哥哥",
+    date: ISODate("2020-09-03T14:50:49.449Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f5102e3403b46d5150ec0f9"),
+    wrongInfo: "TypeError: res.data.dic[2] is undefined",
+    wrongPlace: "字典维护-获取字典数据",
+    userName: "admin",
+    name: "林哥哥",
+    date: ISODate("2020-09-03T14:51:15.999Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f51030f403b46d5150ec0fb"),
+    wrongInfo: "TypeError: res.data.dic[2] is undefined",
+    wrongPlace: "字典维护-获取字典数据",
+    userName: "admin",
+    name: "林哥哥",
+    date: ISODate("2020-09-03T14:51:59.858Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510329403b46d5150ec0fe"),
+    wrongInfo: "TypeError: res.data.dic[2] is undefined",
+    wrongPlace: "字典维护-获取字典数据",
+    userName: "admin",
+    name: "林哥哥",
+    date: ISODate("2020-09-03T14:52:25.883Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f51033a403b46d5150ec101"),
+    wrongInfo: "TypeError: res.data.dic[2] is undefined",
+    wrongPlace: "字典维护-获取字典数据",
+    userName: "admin",
+    name: "林哥哥",
+    date: ISODate("2020-09-03T14:52:42.747Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f5104f7403b46d5150ec110"),
+    wrongInfo: "TypeError: error.response is undefined",
+    wrongPlace: "小区治理-小区建档",
+    userName: "user1",
+    name: "双鱼林",
+    date: ISODate("2020-09-03T15:00:07.569Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f5104fa403b46d5150ec111"),
+    wrongInfo: "TypeError: error.response is undefined",
+    wrongPlace: "小区治理-小区建档",
+    userName: "user1",
+    name: "双鱼林",
+    date: ISODate("2020-09-03T15:00:10.045Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510508d3c864dbcde404fb"),
+    wrongInfo: "TypeError: error.response is undefined",
+    wrongPlace: "小区治理-小区建档",
+    userName: "user1",
+    name: "双鱼林",
+    date: ISODate("2020-09-03T15:00:24.451Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510508d3c864dbcde404fc"),
+    wrongInfo: "TypeError: error.response is undefined",
+    wrongPlace: "小区治理-小区建档",
+    userName: "user1",
+    name: "双鱼林",
+    date: ISODate("2020-09-03T15:00:24.463Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f5105210fd552abadfe6d15"),
+    wrongInfo: "TypeError: error.response is undefined",
+    wrongPlace: "小区治理-小区建档",
+    userName: "user1",
+    name: "双鱼林",
+    date: ISODate("2020-09-03T15:00:49.227Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510637b8eee85905737f1e"),
+    wrongInfo: "TypeError: error.response is undefined",
+    wrongPlace: "小区治理-小区建档",
+    userName: "user1",
+    name: "双鱼林",
+    date: ISODate("2020-09-03T15:05:27.48Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f5106edc443eeda4524bce5"),
+    wrongInfo: "TypeError: error.response is undefined",
+    wrongPlace: "小区治理-小区建档",
+    userName: "user1",
+    name: "双鱼林",
+    date: ISODate("2020-09-03T15:08:29.979Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f5106edc443eeda4524bce6"),
+    wrongInfo: "TypeError: error.response is undefined",
+    wrongPlace: "小区治理-小区建档",
+    userName: "user1",
+    name: "双鱼林",
+    date: ISODate("2020-09-03T15:08:29.992Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510830450a5dd451220d47"),
+    wrongInfo: "TypeError: error.response is undefined",
+    wrongPlace: "小区治理-房屋建档",
+    userName: "user1",
+    name: "双鱼林",
+    date: ISODate("2020-09-03T15:13:52.341Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510981450a5dd451220d5c"),
+    wrongInfo: "TypeError: res.data.dic[2] is undefined",
+    wrongPlace: "字典维护-获取字典数据",
+    userName: "admin",
+    name: "林哥哥",
+    date: ISODate("2020-09-03T15:19:29.754Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f5109d9450a5dd451220d5f"),
+    wrongInfo: "TypeError: res.data.dic[2] is undefined",
+    wrongPlace: "字典维护-获取字典数据",
+    userName: "admin",
+    name: "林哥哥",
+    date: ISODate("2020-09-03T15:20:57.356Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510d89450a5dd451220d69"),
+    wrongInfo: "TypeError: res.data.user[0] is undefined",
+    wrongPlace: "网格管理-新建网格",
+    userName: "grider",
+    name: "张涛",
+    date: ISODate("2020-09-03T15:36:41.22Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510e14787119cf89a69ce8"),
+    wrongInfo: "TypeError: res.data.user[0] is undefined",
+    wrongPlace: "网格管理-新建网格",
+    userName: "grider",
+    name: "张涛",
+    date: ISODate("2020-09-03T15:39:00.194Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510e1f787119cf89a69ce9"),
+    wrongInfo: "TypeError: res.data.user[0] is undefined",
+    wrongPlace: "网格管理-新建网格",
+    userName: "grider",
+    name: "张涛",
+    date: ISODate("2020-09-03T15:39:11.582Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510e3b57b6c3ed20435456"),
+    wrongInfo: "TypeError: res.data.user[0] is undefined",
+    wrongPlace: "网格管理-新建网格",
+    userName: "grider",
+    name: "张涛",
+    date: ISODate("2020-09-03T15:39:39.321Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510e4257b6c3ed20435457"),
+    wrongInfo: "TypeError: res.data.user[0] is undefined",
+    wrongPlace: "网格管理-新建网格",
+    userName: "grider",
+    name: "张涛",
+    date: ISODate("2020-09-03T15:39:46.944Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510e68a727a5c7093c88fc"),
+    wrongInfo: "TypeError: res.data.user[0] is undefined",
+    wrongPlace: "网格管理-新建网格",
+    userName: "grider",
+    name: "张涛",
+    date: ISODate("2020-09-03T15:40:24.478Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510e85a727a5c7093c88fe"),
+    wrongInfo: "TypeError: res.data.user[0] is undefined",
+    wrongPlace: "网格管理-新建网格",
+    userName: "grider",
+    name: "张涛",
+    date: ISODate("2020-09-03T15:40:53.159Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510e8aa727a5c7093c88ff"),
+    wrongInfo: "TypeError: res.data.user[0] is undefined",
+    wrongPlace: "网格管理-新建网格",
+    userName: "grider",
+    name: "张涛",
+    date: ISODate("2020-09-03T15:40:58.679Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510e92a727a5c7093c8900"),
+    wrongInfo: "TypeError: res.data.user[0] is undefined",
+    wrongPlace: "网格管理-新建网格",
+    userName: "grider",
+    name: "张涛",
+    date: ISODate("2020-09-03T15:41:06.422Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510ebca727a5c7093c8901"),
+    wrongInfo: "TypeError: res.data.user[0] is undefined",
+    wrongPlace: "网格管理-新建网格",
+    userName: "grider",
+    name: "张涛",
+    date: ISODate("2020-09-03T15:41:48.868Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f510f71a727a5c7093c8902"),
+    wrongInfo: "TypeError: res.data.user[0] is undefined",
+    wrongPlace: "网格管理-新建网格",
+    userName: "grider",
+    name: "张涛",
+    date: ISODate("2020-09-03T15:44:49.267Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f5116f3a727a5c7093c892e"),
+    wrongInfo: "TypeError: res.data.user[0] is undefined",
+    wrongPlace: "网格管理-新建网格",
+    userName: "manage",
+    name: "王明",
+    date: ISODate("2020-09-03T16:16:51.888Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f511701a727a5c7093c892f"),
+    wrongInfo: "TypeError: res.data.user[0] is undefined",
+    wrongPlace: "网格管理-新建网格",
+    userName: "manage",
+    name: "王明",
+    date: ISODate("2020-09-03T16:17:05.778Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f511736a727a5c7093c8930"),
+    wrongInfo: "TypeError: res.data.user[0] is undefined",
+    wrongPlace: "网格管理-新建网格",
+    userName: "manage",
+    name: "王明",
+    date: ISODate("2020-09-03T16:17:58.000Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f511755a727a5c7093c8931"),
+    wrongInfo: "TypeError: res.data.user[0] is undefined",
+    wrongPlace: "网格管理-新建网格",
+    userName: "manage",
+    name: "王明",
+    date: ISODate("2020-09-03T16:18:29.213Z"),
+    __v: NumberInt("0")
+} ]);
+db.getCollection("systemrecords").insert([ {
+    _id: ObjectId("5f5117e94cfaf8c78df28ad2"),
+    wrongInfo: "TypeError: res.data.user[0] is undefined",
+    wrongPlace: "网格管理-新建网格",
+    userName: "manage",
+    name: "王明",
+    date: ISODate("2020-09-03T16:20:57.068Z"),
+    __v: NumberInt("0")
+} ]);
+
+// ----------------------------
+// Collection structure for tasks
+// ----------------------------
+db.getCollection("tasks").drop();
+db.createCollection("tasks");
+
+// ----------------------------
+// Documents of tasks
+// ----------------------------
+db.getCollection("tasks").insert([ {
+    _id: ObjectId("5f51222e4cfaf8c78df28b28"),
+    gridRange: "华林小区周边",
+    taskType: "一般任务",
+    taskAmount: "5",
+    quality: "良",
+    process: "已完成",
+    checked: "已审核",
+    gridPerson: "华林小区网络员",
+    date: ISODate("2020-09-03T17:04:46.185Z"),
+    insideData: [ ],
+    __v: NumberInt("0")
+} ]);
+db.getCollection("tasks").insert([ {
+    _id: ObjectId("5f5232674cfaf8c78df28b37"),
+    gridRange: "富林理工周边",
+    taskType: "一般任务",
+    taskAmount: "8",
+    quality: "优",
+    process: "已完成",
+    checked: "已审核",
+    gridPerson: "富林理工网络员",
+    date: ISODate("2020-09-04T12:26:15.203Z"),
+    insideData: [ ],
+    __v: NumberInt("0")
+} ]);
+
+// ----------------------------
+// Collection structure for users
+// ----------------------------
+db.getCollection("users").drop();
+db.createCollection("users");
+
+// ----------------------------
+// Documents of users
+// ----------------------------
+db.getCollection("users").insert([ {
+    _id: ObjectId("5f50fc050078e7d4b9006f52"),
+    userName: "admin",
+    password: "$2a$10$Y5tqogADtsaCG4wleDbMo.bi7ji/Ha2H8nLo4RBHECEFvOGocEvNS",
+    role: "administrator",
+    date: "2020-09-03",
+    name: "林哥哥",
+    tel: "13508312034",
+    education: "大学本科",
+    nation: "汉"
+} ]);
+db.getCollection("users").insert([ {
+    _id: ObjectId("5f510354403b46d5150ec102"),
+    userName: "leader",
+    password: "$2a$10$zhMIHVntQuEZbbAvoFu71eJq7cOuTkuAX3Z3WHrvFF8aUwX1/fSVO",
+    role: "领导",
+    tel: 13958010342,
+    name: "张领导",
+    nation: "汉族",
+    education: "大学本科",
+    date: ISODate("2020-09-03T14:53:08.417Z"),
+    insideData: [ ],
+    insideData1: [ ],
+    __v: NumberInt("0")
+} ]);
+db.getCollection("users").insert([ {
+    _id: ObjectId("5f510cfd0078e7d4b9006f53"),
+    userName: "manage",
+    role: "gridManager",
+    password: "$2a$10$p5PEuLp49w8iimkK4g2z2uL.fY23MF9GiiX3mOKZdCdgxFZOHczKG",
+    date: "2020-09-03 15:16:08.442",
+    education: "大学本科",
+    name: "王明",
+    nation: "汉族",
+    tel: 13082083422,
+    __v: 0,
+    insideData: [ ],
+    insideData1: [ ]
+} ]);
+db.getCollection("users").insert([ {
+    _id: ObjectId("5f511ec64cfaf8c78df28b03"),
+    userName: "user1",
+    password: "$2a$10$xPSuWvspo14gkPFLa1Py9eQynf7FJvtOFM395Ecd6th9y.9vEAIjK",
+    role: "网格员用户",
+    tel: 13508100342,
+    name: "华林小区网络员",
+    nation: "汉族",
+    education: "大学本科",
+    date: ISODate("2020-09-03T16:50:14.913Z"),
+    insideData: [
+        {
+            _id: ObjectId("5f52346a4cfaf8c78df28b4e"),
+            userName: "user1",
+            name: "华林小区网络员",
+            tel: "13508100342",
+            education: "大学本科",
+            nation: "汉族",
+            taskAmount: "10",
+            quality: "良",
+            date: ISODate("2020-09-04T12:34:50.507Z")
+        },
+        {
+            date: ISODate("2020-09-03T16:51:28.218Z"),
+            _id: ObjectId("5f511f104cfaf8c78df28b07"),
+            gridNum: "1",
+            gridRange: "华林小区周边",
+            gridPeople: "华林小区网络员",
+            userName: "user1"
+        }
+    ],
+    insideData1: [ ],
+    __v: NumberInt("23")
+} ]);
+db.getCollection("users").insert([ {
+    _id: ObjectId("5f511ee84cfaf8c78df28b05"),
+    userName: "user2",
+    password: "$2a$10$m9pQ57p1hP6QqP3HDH7DlOmm2OFJsJoD.5BQcPreiaeNJXxX.ixES",
+    role: "网格员用户",
+    tel: 13502309342,
+    name: "富林理工网络员",
+    nation: "汉族",
+    education: "大专",
+    date: ISODate("2020-09-03T16:50:48.36Z"),
+    insideData: [
+        {
+            _id: ObjectId("5f52346a4cfaf8c78df28b4f"),
+            userName: "user2",
+            name: "富林理工网络员",
+            tel: "13502309342",
+            education: "大专",
+            nation: "汉族",
+            taskAmount: "30",
+            quality: "优",
+            date: ISODate("2020-09-04T12:34:50.56Z")
+        },
+        {
+            date: ISODate("2020-09-03T16:52:25.141Z"),
+            _id: ObjectId("5f511f494cfaf8c78df28b09"),
+            gridNum: "2",
+            gridRange: "富林理工周边",
+            gridPeople: "富林理工网络员",
+            userName: "user2"
+        }
+    ],
+    insideData1: [ ],
+    __v: NumberInt("19")
+} ]);
